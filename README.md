@@ -7,10 +7,15 @@ On my PC, I added the scripts to a folder in the `$PATH` environment variable an
 
 # Usage
 
-* `./newMake.sh` creates a template Makefile, missing only the executable, source and header file names.
+newMake creates a template Makefile, missing only the executable, source and header file names.
+```Shell
+./newMake.sh
+```
 <br>
 
-* `./newClass.sh <ClassName>` creates the files `<Classname>.hpp` and `<Classname>.cpp`.
-  
+newClass creates the files `<Classname>.hpp` and `<Classname>.cpp`.
+```Shell
+./newClass.sh <ClassName>
+```
   *  `<ClassName>.hpp` contains include guards and the basic structure of a class named `<ClassName>`.
   *  `<ClassName>.cpp` contains the `<ClassName>.hpp` dependency and the default constructor and destructor.
