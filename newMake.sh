@@ -10,10 +10,10 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
 OBJ_DIR = .obj
 
-SRCS = <source files>
+SRCS = <source_files>
 OBJS = \$(addprefix \$(OBJ_DIR)/, \$(SRCS:%.cpp=%.o))
 
-HEADER = <header files>
+HEADER = <header_files>
 
 all: \$(NAME)
 
