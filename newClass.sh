@@ -21,7 +21,10 @@ class $1 {
 	private:
 
 	public:
+ 		// Constructors
 		$1( void );
+
+  		// Destructors
 		~$1( void );
 };
 
