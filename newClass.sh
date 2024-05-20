@@ -8,38 +8,40 @@ then
 	exit 0
 fi
 
-# $1 = ClassName
+ClassName = $1
 
 # Create header file
-cat << EOF > $PWD/$1.hpp
-#ifndef $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
-# define $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
+cat << EOF > $PWD/$ClassName.hpp
+#ifndef $(echo "$ClassName"_HPP | tr '[:lower:]' '[:upper:]')
+# define $(echo "$ClassName"_HPP | tr '[:lower:]' '[:upper:]')
 
 # include <iostream>
 
-class $1 {
+class $ClassName {
 	private:
 
 	public:
  		// Constructors
-		$1( void );
+		$ClassName( void );
 
   		// Destructors
-		~$1( void );
+		~$ClassName( void );
+
+  		// Methods
 };
 
 #endif
 EOF
 
 # Create C++ file
-cat << EOF > $PWD/$1.cpp
-#include "$1.hpp"
+cat << EOF > $PWD/$ClassName.cpp
+#include "$ClassName.hpp"
 
-$1::$1( void ) {
-	//std::cout << "$1 has been constructed" <<std::endl;
+$ClassName::$ClassName( void ) {
+	//std::cout << "$ClassName has been constructed" <<std::endl;
 }
 
-$1::~$1( void ) {
-	//std::cout << "$1 has been destroyed" <<std::endl;
+$ClassName::~$ClassName( void ) {
+	//std::cout << "$ClassName has been destroyed" <<std::endl;
 }
 EOF
