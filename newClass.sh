@@ -31,9 +31,9 @@ class $1 {
 		// Copy assignment operator
 		$1 & operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
-		// Setter
-		
 		// Getter
+		
+		// Setter
 		
   		// Methods
 };
