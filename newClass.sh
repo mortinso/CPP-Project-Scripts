@@ -8,24 +8,28 @@ then
 	exit 0
 fi
 
-ClassName = $1
+# $1 = ClassName
 
 # Create header file
-cat << EOF > $PWD/$ClassName.hpp
-#ifndef $(echo "$ClassName"_HPP | tr '[:lower:]' '[:upper:]')
-# define $(echo "$ClassName"_HPP | tr '[:lower:]' '[:upper:]')
+cat << EOF > $PWD/$1.hpp
+#ifndef $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
+# define $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
 
 # include <iostream>
 
-class $ClassName {
+class $1 {
 	private:
 
 	public:
  		// Constructors
-		$ClassName( void );
+		$1( void );
+		$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]')
 
-  		// Destructors
-		~$ClassName( void );
+  		// Destructor
+		~$1( void );
+		
+		// Copy assignment operator
+		$1 & operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
   		// Methods
 };
@@ -34,14 +38,14 @@ class $ClassName {
 EOF
 
 # Create C++ file
-cat << EOF > $PWD/$ClassName.cpp
-#include "$ClassName.hpp"
+cat << EOF > $PWD/$1.cpp
+#include "$1.hpp"
 
-$ClassName::$ClassName( void ) {
-	//std::cout << "$ClassName has been constructed" <<std::endl;
+$1::$1( void ) {
+	//std::cout << "$1 has been constructed" <<std::endl;
 }
 
-$ClassName::~$ClassName( void ) {
-	//std::cout << "$ClassName has been destroyed" <<std::endl;
+$1::~$1( void ) {
+	//std::cout << "$1 has been destroyed" <<std::endl;
 }
 EOF
