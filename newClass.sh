@@ -46,7 +46,7 @@ cat << EOF > $PWD/$1.cpp
 #include "$1.hpp"
 
 $1::$1( void ) {
-	//std::cout << "Default constructor called" <<std::endl;
+	std::cout << "Default constructor called" <<std::endl;
 }
 
 $1::$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
@@ -55,7 +55,7 @@ $1::$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 }
 
 $1::~$1( void ) {
-	//std::cout << "Destructor called" <<std::endl;
+	std::cout << "Destructor called" <<std::endl;
 }
 
 $1& $1::operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
