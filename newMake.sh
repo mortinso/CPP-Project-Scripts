@@ -8,21 +8,25 @@ NAME = <name>
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
+SRC_FIR = src
+INC_DIR = inc
 OBJ_DIR = .obj
 
-SRCS = <source_files>
-OBJS = \$(addprefix \$(OBJ_DIR)/, \$(SRCS:%.cpp=%.o))
+SRC_FILES = <source_files>
+INC = <header_files>
 
-HEADER = <header_files>
+SRCS = \$(addprefix \$(SRC_DIR)/, \$(SRC_FILES))
+HEADERS = \$(addprefix \$(INC_DIR)/, \$(INC))
+OBJS = \$(addprefix \$(OBJ_DIR)/, \$(SRCS:%.cpp=%.o))
 
 all: \$(NAME)
 
-\$(NAME): \$(OBJS) \$(HEADER)
+\$(NAME): \$(OBJS) \$(HEADERS)
 	@\$(CC) \$(CFLAGS) \$(OBJS) -o \$(NAME)
 	@echo "Compiled!"
 
-\$(OBJ_DIR)/%.o: %.cpp \$(HEADER)
-	@mkdir -p \$(dir \$@)
+\$(OBJ_DIR)/%.o: %.cpp \$(HEADERS)
+	@mkdir -p \$(OBJ_DIR)/\$(dir \$<)
 	@\$(CC) \$(CFLAGS) -c \$< -o \$@
 
 clean:
