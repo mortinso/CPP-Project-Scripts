@@ -13,19 +13,19 @@ INC_DIR = inc
 OBJ_DIR = .obj
 
 SRC_FILES = <source_files>
-INC = <header_files>
+INC_FILES = <header_files>
 
 SRCS = \$(addprefix \$(SRC_DIR)/, \$(SRC_FILES))
-HEADERS = \$(addprefix \$(INC_DIR)/, \$(INC))
+HDRS = \$(addprefix \$(INC_DIR)/, \$(INC_FILES))
 OBJS = \$(addprefix \$(OBJ_DIR)/, \$(SRCS:%.cpp=%.o))
 
 all: \$(NAME)
 
-\$(NAME): \$(OBJS) \$(HEADERS)
+\$(NAME): \$(OBJS) \$(HDRS)
 	@\$(CC) \$(CFLAGS) \$(OBJS) -o \$(NAME)
 	@echo "Compiled!"
 
-\$(OBJ_DIR)/%.o: %.cpp \$(HEADERS)
+\$(OBJ_DIR)/%.o: %.cpp \$(HDRS)
 	@mkdir -p \$(OBJ_DIR)/\$(dir \$<)
 	@\$(CC) \$(CFLAGS) -c \$< -o \$@
 
