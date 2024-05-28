@@ -11,7 +11,7 @@ fi
 # $1 = ClassName
 
 # Create header file
-cat << EOF > $PWD/$1.hpp
+cat << EOF > $PWD/inc/$1.hpp
 #ifndef $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
 # define $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
 
@@ -42,8 +42,8 @@ class $1 {
 EOF
 
 # Create C++ file
-cat << EOF > $PWD/$1.cpp
-#include "$1.hpp"
+cat << EOF > $PWD/src/$1.cpp
+#include "../inc/$1.hpp"
 
 $1::$1( void ) {
 	std::cout << "Default constructor called" <<std::endl;
