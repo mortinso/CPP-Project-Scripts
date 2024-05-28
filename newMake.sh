@@ -5,8 +5,8 @@
 cat << EOF > $PWD/Makefile
 NAME = <name>
 
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
 SRC_FIR = src
 INC_DIR = inc
@@ -22,12 +22,12 @@ OBJS = \$(addprefix \$(OBJ_DIR)/, \$(SRCS:%.cpp=%.o))
 all: \$(NAME)
 
 \$(NAME): \$(OBJS) \$(HDRS)
-	@\$(CC) \$(CFLAGS) \$(OBJS) -o \$(NAME)
+	@\$(CXX) \$(CXXFLAGS) \$(OBJS) -o \$(NAME)
 	@echo "Compiled!"
 
 \$(OBJ_DIR)/%.o: %.cpp \$(HDRS)
 	@mkdir -p \$(OBJ_DIR)/\$(dir \$<)
-	@\$(CC) \$(CFLAGS) -c \$< -o \$@
+	@\$(CXX) \$(CXXFLAGS) -c \$< -o \$@
 
 clean:
 	@rm -rf \$(OBJS) \$(OBJ_DIR)
