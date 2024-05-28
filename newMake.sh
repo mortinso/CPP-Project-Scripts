@@ -8,7 +8,7 @@ NAME = <name>
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
-SRC_FIR = src
+SRC_DIR = src
 INC_DIR = inc
 OBJ_DIR = .obj
 
