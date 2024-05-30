@@ -2,7 +2,7 @@
 
 # This script was created with the aim of helping me create and fill out the repetitive parts of Class.cpp/.hpp files faster.
 
-if [ "$#" -eq 0 ]
+if [ "$#" != "1" ]
 then
 	echo "\033[1;30m\033[107mUsage:\033[0;39m\033[49m ./newClass.sh <ClassName>"
 	exit 0
