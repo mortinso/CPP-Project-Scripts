@@ -21,21 +21,21 @@ class $1 {
 	private:
 
 	public:
- 		// Constructors
+		// Constructors
 		$1( void );
 		$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
-  		// Destructor
+		// Destructor
 		~$1( void );
-		
-		// Copy assignment operator
+
+		// Copy assignment operator overload
 		$1 & operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
 		// Getter
-		
+
 		// Setter
-		
-  		// Methods
+
+		// Methods
 };
 
 #endif
@@ -45,21 +45,25 @@ EOF
 cat << EOF > $PWD/src/$1.cpp
 #include "../inc/$1.hpp"
 
+// Default constructor
 $1::$1( void ) {
-	std::cout << "Default constructor called" <<std::endl;
+	std::cout << "$1 default constructor called" <<std::endl;
 }
 
+// Copy constructor
 $1::$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "$1 copy constructor called" << std::endl;
 	*this = $(echo $1 | tr '[:upper:]' '[:lower:]');
 }
 
+// Destructor
 $1::~$1( void ) {
-	std::cout << "Destructor called" <<std::endl;
+	std::cout << "$1 destructor called" <<std::endl;
 }
 
+// Copy assignment operator overload
 $1& $1::operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "$1 copy assignment operator called" << std::endl;
 	if (this != &$(echo $1 | tr '[:upper:]' '[:lower:]')) {
 		// this->setValue($(echo $1 | tr '[:upper:]' '[:lower:]').getValue());
 	}
