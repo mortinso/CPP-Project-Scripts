@@ -11,6 +11,7 @@ fi
 # $1 = ClassName
 
 # Create header file
+[ ! -d "$PWD/inc" ] && mkdir inc
 cat << EOF > $PWD/inc/$1.hpp
 #ifndef $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
 # define $(echo "$1"_HPP | tr '[:lower:]' '[:upper:]')
@@ -31,9 +32,9 @@ class $1 {
 		// Copy assignment operator overload
 		$1 & operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
-		// Getter
+		// Getters
 
-		// Setter
+		// Setters
 
 		// Methods
 };
@@ -42,6 +43,7 @@ class $1 {
 EOF
 
 # Create C++ file
+[ ! -d "$PWD/src" ] && mkdir src
 cat << EOF > $PWD/src/$1.cpp
 #include "../inc/$1.hpp"
 
@@ -69,4 +71,10 @@ $1& $1::operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	}
 	return (*this);
 }
+
+// -----------------------------------Getters-----------------------------------
+
+// -----------------------------------Setters-----------------------------------
+
+// -----------------------------------Methods-----------------------------------
 EOF
