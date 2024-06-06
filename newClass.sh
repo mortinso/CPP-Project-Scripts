@@ -18,6 +18,9 @@ cat << EOF > $PWD/inc/$1.hpp
 
 # include <iostream>
 
+# define BOLD "\e[1m"
+# define ITALIC "\e[3m"
+# define UNDERLINE "\e[4m"
 # define RED "\e[91m"
 # define GREEN "\e[92m"
 # define YELLOW "\e[93m"
