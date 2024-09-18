@@ -36,13 +36,13 @@ class $1 {
 	public:
 		// Constructors
 		$1( void );
-		$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
+		$1( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
 		// Destructor
 		~$1( void );
 
 		// Copy assignment operator overload
-		$1 & operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') );
+		$1 & operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
 		// Getters
 
@@ -65,7 +65,7 @@ $1::$1( void ) {
 }
 
 // Copy constructor
-$1::$1( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
+$1::$1( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	std::cout << "$1 copy constructor called" << std::endl;
 	*this = $(echo $1 | tr '[:upper:]' '[:lower:]');
 }
@@ -76,10 +76,10 @@ $1::~$1( void ) {
 }
 
 // Copy assignment operator overload
-$1& $1::operator = ( const $1 &$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
+$1& $1::operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	std::cout << "$1 copy assignment operator called" << std::endl;
-	if (this != &$(echo $1 | tr '[:upper:]' '[:lower:]')) {
-		// this->setValue($(echo $1 | tr '[:upper:]' '[:lower:]').getValue());
+	if (this != &_$(echo $1 | tr '[:upper:]' '[:lower:]')) {
+		// this->setValue(_$(echo $1 | tr '[:upper:]' '[:lower:]').getValue());
 	}
 	return (*this);
 }
