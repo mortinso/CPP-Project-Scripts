@@ -67,7 +67,7 @@ $1::$1( void ) {
 // Copy constructor
 $1::$1( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	std::cout << "$1 copy constructor called" << std::endl;
-	*this = $(echo $1 | tr '[:upper:]' '[:lower:]');
+	*this = _$(echo $1 | tr '[:upper:]' '[:lower:]');
 }
 
 // Destructor
