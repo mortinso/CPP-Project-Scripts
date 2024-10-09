@@ -41,14 +41,16 @@ class $1 {
 		// Destructor
 		~$1( void );
 
-		// Copy assignment operator overload
-		$1 & operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') );
+		// Operator overloads
+		$1 &operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') );
 
 		// Getters
 
 		// Setters
 
 		// Methods
+
+		// Exceptions
 };
 
 #endif
@@ -84,9 +86,13 @@ $1& $1::operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	return (*this);
 }
 
+// -----------------------------------Operators---------------------------------
+
 // -----------------------------------Getters-----------------------------------
 
 // -----------------------------------Setters-----------------------------------
 
 // -----------------------------------Methods-----------------------------------
+
+// -----------------------------------Exceptions--------------------------------
 EOF
