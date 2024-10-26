@@ -77,6 +77,7 @@ $1::~$1( void ) {
 	std::cout << "$1 destructor called" <<std::endl;
 }
 
+// -----------------------------------Operators---------------------------------
 // Copy assignment operator overload
 $1& $1::operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	std::cout << "$1 copy assignment operator called" << std::endl;
@@ -85,8 +86,6 @@ $1& $1::operator = ( const $1 &_$(echo $1 | tr '[:upper:]' '[:lower:]') ) {
 	}
 	return (*this);
 }
-
-// -----------------------------------Operators---------------------------------
 
 // -----------------------------------Getters-----------------------------------
 
