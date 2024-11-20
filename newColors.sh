@@ -21,7 +21,7 @@ cat << EOF > $PWD/inc/colors.hpp
 # define GREEN	"\e[32m"
 # define YELLOW	"\e[33m"
 # define BLUE	"\e[34m"
-# define PURPLE	"\e[35m
+# define PURPLE	"\e[35m"
 # define CYAN	"\e[36m"
 # define WHITE	"\e[37m"
 
@@ -41,7 +41,7 @@ cat << EOF > $PWD/inc/colors.hpp
 # define BG_GREEN	"\e[42m"
 # define BG_YELLOW	"\e[43m"
 # define BG_BLUE	"\e[44m"
-# define BG_PURPLE	"\e[45m
+# define BG_PURPLE	"\e[45m"
 # define BG_CYAN	"\e[46m"
 # define BG_WHITE	"\e[47m"
 
@@ -51,7 +51,7 @@ cat << EOF > $PWD/inc/colors.hpp
 # define BG_GREEN_H		"\e[102m"
 # define BG_YELLOW_H	"\e[103m"
 # define BG_BLUE_H		"\e[104m"
-# define BG_PURPLE_H	"\e[105m
+# define BG_PURPLE_H	"\e[105m"
 # define BG_CYAN_H		"\e[106m"
 # define BG_WHITE_H		"\e[107m"
 
